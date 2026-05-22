@@ -1,0 +1,86 @@
+[
+    {
+        "merged": "com.notion.todowidget.app-merged_res-38:/drawable_guide_bg.xml.flat",
+        "source": "com.notion.todowidget.app-main-40:/drawable/guide_bg.xml"
+    },
+    {
+        "merged": "com.notion.todowidget.app-merged_res-38:/mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "com.notion.todowidget.app-main-40:/mipmap-xxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.notion.todowidget.app-merged_res-38:/drawable_btn_secondary_bg.xml.flat",
+        "source": "com.notion.todowidget.app-main-40:/drawable/btn_secondary_bg.xml"
+    },
+    {
+        "merged": "com.notion.todowidget.app-merged_res-38:/mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "com.notion.todowidget.app-main-40:/mipmap-xhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.notion.todowidget.app-merged_res-38:/mipmap-mdpi_ic_launcher.png.flat",
+        "source": "com.notion.todowidget.app-main-40:/mipmap-mdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.notion.todowidget.app-merged_res-38:/layout_activity_main.xml.flat",
+        "source": "com.notion.todowidget.app-main-40:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.notion.todowidget.app-merged_res-38:/layout_widget_item.xml.flat",
+        "source": "com.notion.todowidget.app-main-40:/layout/widget_item.xml"
+    },
+    {
+        "merged": "com.notion.todowidget.app-merged_res-38:/mipmap-hdpi_ic_launcher.png.flat",
+        "source": "com.notion.todowidget.app-main-40:/mipmap-hdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.notion.todowidget.app-merged_res-38:/drawable_status_bg.xml.flat",
+        "source": "com.notion.todowidget.app-main-40:/drawable/status_bg.xml"
+    },
+    {
+        "merged": "com.notion.todowidget.app-merged_res-38:/layout_widget_layout.xml.flat",
+        "source": "com.notion.todowidget.app-main-40:/layout/widget_layout.xml"
+    },
+    {
+        "merged": "com.notion.todowidget.app-merged_res-38:/layout_widget_list_item.xml.flat",
+        "source": "com.notion.todowidget.app-main-40:/layout/widget_list_item.xml"
+    },
+    {
+        "merged": "com.notion.todowidget.app-merged_res-38:/drawable_quadrant_bg_q2.xml.flat",
+        "source": "com.notion.todowidget.app-main-40:/drawable/quadrant_bg_q2.xml"
+    },
+    {
+        "merged": "com.notion.todowidget.app-merged_res-38:/drawable_widget_bg.xml.flat",
+        "source": "com.notion.todowidget.app-main-40:/drawable/widget_bg.xml"
+    },
+    {
+        "merged": "com.notion.todowidget.app-merged_res-38:/xml_widget_info.xml.flat",
+        "source": "com.notion.todowidget.app-main-40:/xml/widget_info.xml"
+    },
+    {
+        "merged": "com.notion.todowidget.app-merged_res-38:/mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "com.notion.todowidget.app-main-40:/mipmap-xxxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.notion.todowidget.app-merged_res-38:/drawable_quadrant_bg_q1.xml.flat",
+        "source": "com.notion.todowidget.app-main-40:/drawable/quadrant_bg_q1.xml"
+    },
+    {
+        "merged": "com.notion.todowidget.app-merged_res-38:/drawable_quadrant_bg_q4.xml.flat",
+        "source": "com.notion.todowidget.app-main-40:/drawable/quadrant_bg_q4.xml"
+    },
+    {
+        "merged": "com.notion.todowidget.app-merged_res-38:/drawable_btn_refresh_bg.xml.flat",
+        "source": "com.notion.todowidget.app-main-40:/drawable/btn_refresh_bg.xml"
+    },
+    {
+        "merged": "com.notion.todowidget.app-merged_res-38:/drawable_input_bg.xml.flat",
+        "source": "com.notion.todowidget.app-main-40:/drawable/input_bg.xml"
+    },
+    {
+        "merged": "com.notion.todowidget.app-merged_res-38:/drawable_quadrant_bg_q3.xml.flat",
+        "source": "com.notion.todowidget.app-main-40:/drawable/quadrant_bg_q3.xml"
+    },
+    {
+        "merged": "com.notion.todowidget.app-merged_res-38:/drawable_btn_primary_bg.xml.flat",
+        "source": "com.notion.todowidget.app-main-40:/drawable/btn_primary_bg.xml"
+    }
+]

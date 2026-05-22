@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">노션 투두 위젯</string>
+    <string name="widget_description">노션 투두리스트를 아이젠하워 매트릭스로 표시합니다</string>
+</resources>

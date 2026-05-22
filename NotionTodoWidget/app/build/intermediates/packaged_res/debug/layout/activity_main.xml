@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F8F7FF">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="📌" android:textSize="40sp" android:layout_marginBottom="8dp"/>
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="노션 투두 위젯 설정" android:textSize="22sp" android:textStyle="bold"
+            android:textColor="#3D3185" android:layout_marginBottom="4dp"/>
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="아래 정보를 입력하고 저장하세요" android:textSize="13sp"
+            android:textColor="#9E9BB8" android:layout_marginBottom="28dp"/>
+
+        <!-- API 토큰 -->
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="Notion API 토큰" android:textSize="13sp" android:textStyle="bold"
+            android:textColor="#3D3185" android:layout_marginBottom="4dp"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="notion.so/my-integrations 에서 발급" android:textSize="11sp"
+            android:textColor="#9E9BB8" android:layout_marginBottom="8dp"/>
+        <EditText android:id="@+id/et_token" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:hint="secret_xxx 또는 ntn_xxx"
+            android:textSize="12sp" android:background="@drawable/input_bg"
+            android:padding="14dp" android:layout_marginBottom="20dp"
+            android:inputType="textPassword"/>
+
+        <!-- DB ID -->
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="데이터베이스 ID" android:textSize="13sp" android:textStyle="bold"
+            android:textColor="#3D3185" android:layout_marginBottom="4dp"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="노션 DB를 전체 페이지로 열었을 때 URL의 32자리 코드" android:textSize="11sp"
+            android:textColor="#9E9BB8" android:layout_marginBottom="8dp"/>
+        <EditText android:id="@+id/et_db_id" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:hint="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+            android:textSize="12sp" android:background="@drawable/input_bg"
+            android:padding="14dp" android:layout_marginBottom="24dp"/>
+
+        <!-- 저장 버튼 -->
+        <Button android:id="@+id/btn_save" android:layout_width="match_parent"
+            android:layout_height="52dp" android:text="저장 및 연결 테스트"
+            android:textSize="15sp" android:textColor="#FFFFFF"
+            android:background="@drawable/btn_primary_bg" android:layout_marginBottom="12dp"/>
+
+        <!-- 동기화 버튼 -->
+        <Button android:id="@+id/btn_sync" android:layout_width="match_parent"
+            android:layout_height="48dp" android:text="지금 동기화"
+            android:textSize="14sp" android:textColor="#FFFFFF"
+            android:background="@drawable/btn_primary_bg" android:layout_marginBottom="20dp"/>
+
+        <!-- 상태 텍스트 -->
+        <TextView android:id="@+id/tv_status" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:text=""
+            android:textSize="13sp" android:textColor="#4A4A6A"
+            android:background="@drawable/status_bg" android:padding="14dp"
+            android:visibility="gone" android:layout_marginBottom="24dp"/>
+
+        <!-- 완료 동작 설정 -->
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="✅ 완료 시 동작" android:textSize="13sp" android:textStyle="bold"
+            android:textColor="#3D3185" android:layout_marginBottom="12dp"/>
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical" android:background="@drawable/guide_bg"
+            android:padding="14dp" android:layout_marginBottom="20dp">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:gravity="center_vertical">
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:orientation="vertical">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="취소선 표시 모드" android:textSize="13sp" android:textColor="#3D3D3D"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="OFF: 체크 시 즉시 제거  |  ON: 취소선으로 표시"
+                        android:textSize="11sp" android:textColor="#9E9BB8"/>
+                </LinearLayout>
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/switch_strikethrough"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- 투명도 설정 -->
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="🎨 투명도 설정" android:textSize="13sp" android:textStyle="bold"
+            android:textColor="#3D3185" android:layout_marginBottom="12dp"/>
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical" android:background="@drawable/guide_bg"
+            android:padding="14dp" android:layout_marginBottom="20dp">
+
+            <!-- 위젯 배경 투명도 -->
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:gravity="center_vertical"
+                android:layout_marginBottom="4dp">
+                <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:text="위젯 배경 투명도"
+                    android:textSize="12sp" android:textColor="#4A4A6A"/>
+                <TextView android:id="@+id/tv_widget_alpha_val" android:layout_width="40dp"
+                    android:layout_height="wrap_content" android:text="100%"
+                    android:textSize="12sp" android:textColor="#7B6FBE" android:gravity="end"/>
+            </LinearLayout>
+            <SeekBar android:id="@+id/seek_widget_alpha" android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:max="100" android:progress="100"
+                android:layout_marginBottom="16dp"/>
+
+            <!-- 사분면 배경 투명도 -->
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:gravity="center_vertical"
+                android:layout_marginBottom="4dp">
+                <TextView android:layout_width="0dp" android:layout_height="wrap_content"
+                    android:layout_weight="1" android:text="사분면 배경 투명도"
+                    android:textSize="12sp" android:textColor="#4A4A6A"/>
+                <TextView android:id="@+id/tv_quadrant_alpha_val" android:layout_width="40dp"
+                    android:layout_height="wrap_content" android:text="100%"
+                    android:textSize="12sp" android:textColor="#7B6FBE" android:gravity="end"/>
+            </LinearLayout>
+            <SeekBar android:id="@+id/seek_quadrant_alpha" android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:max="100" android:progress="100"/>
+        </LinearLayout>
+
+        <!-- 가이드 -->
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="📋 노션 속성 설정 가이드" android:textSize="13sp" android:textStyle="bold"
+            android:textColor="#3D3185" android:layout_marginBottom="8dp"/>
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="• 상태 속성명: 상태 (시작 전 / 진행 중 / 완료)\n• 우선순위 속성명: 우선순위 평가 (Select)\n  - 긴급+중요\n  - 비긴급+중요\n  - 긴급+비중요\n  - 비긴급+비중요\n• 제목 속성명: 이름"
+            android:textSize="12sp" android:textColor="#5A5A7A" android:lineSpacingMultiplier="1.5"
+            android:background="@drawable/guide_bg" android:padding="14dp"/>
+
+    </LinearLayout>
+</ScrollView>

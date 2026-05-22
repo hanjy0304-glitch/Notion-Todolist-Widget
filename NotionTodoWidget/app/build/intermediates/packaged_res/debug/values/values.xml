@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_dark">#3D3185</color>
+    <color name="purple_light">#F8F7FF</color>
+    <color name="purple_primary">#7B6FBE</color>
+    <color name="q1_accent">#E57373</color>
+    <color name="q2_accent">#7986CB</color>
+    <color name="q3_accent">#FFB74D</color>
+    <color name="q4_accent">#81C784</color>
+    <color name="text_primary">#3D3D3D</color>
+    <color name="text_secondary">#9E9BB8</color>
+    <color name="white">#FFFFFF</color>
+    <string name="app_name">노션 투두 위젯</string>
+    <string name="widget_description">노션 투두리스트를 아이젠하워 매트릭스로 표시합니다</string>
+    <style name="Theme.NotionTodoWidget" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/purple_primary</item>
+        <item name="colorPrimaryVariant">@color/purple_dark</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="android:windowBackground">@color/purple_light</item>
+        <item name="android:statusBarColor">@color/purple_light</item>
+        <item name="android:navigationBarColor">@color/purple_light</item>
+    </style>
+</resources>

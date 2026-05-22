@@ -1,0 +1,4 @@
+#Thu May 21 23:14:43 KST 2026
+base.0=C\:\\Users\\USER\\Downloads\\NotionTodoWidget_v2.7_260521\\NotionTodoWidget\\app\\build\\intermediates\\dex\\debugAndroidTest\\mergeProjectDexDebugAndroidTest\\0\\classes.dex
+path.0=0/classes.dex
+renamed.0=classes.dex
