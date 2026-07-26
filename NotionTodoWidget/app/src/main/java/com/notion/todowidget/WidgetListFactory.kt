@@ -69,6 +69,13 @@ class WidgetListFactory(
         }
         views.setOnClickFillInIntent(R.id.item_check, fillIn)
 
+        // 항목(제목/D-day/행) 탭 → 해당 노션 페이지 열기
+        val openNotionFillIn = Intent().apply {
+            putExtra(CompleteActionReceiver.EXTRA_OPEN_NOTION, true)
+            putExtra(CompleteActionReceiver.EXTRA_PAGE_ID, item.id)
+        }
+        views.setOnClickFillInIntent(R.id.item_row, openNotionFillIn)
+
         return views
     }
 
