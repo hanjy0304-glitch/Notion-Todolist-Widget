@@ -7,5 +7,7 @@
         <item name="android:windowBackground">@color/purple_light</item>
         <item name="android:statusBarColor">@color/purple_light</item>
         <item name="android:navigationBarColor">@color/purple_light</item>
+        <item name="android:fontFamily">@font/nanum_square_regular</item>
+        <item name="fontFamily">@font/nanum_square_regular</item>
     </style>
 </resources>
