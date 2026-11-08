@@ -83,9 +83,13 @@ class TodoWidgetProvider : AppWidgetProvider() {
             // 사분면 라벨 탭 → 노션 DB 열기
             val dbId = Prefs.getDbId(context)
             if (dbId.isNotEmpty()) {
-                val notionPi = PendingIntent.getActivity(
+                val notionPi = PendingIntent.getBroadcast(
                     context, 998,
-                    CompleteActionReceiver.notionIntent(context, dbId),
+                    Intent(context, CompleteActionReceiver::class.java).apply {
+                        action = CompleteActionReceiver.ACTION_COMPLETE
+                        putExtra(CompleteActionReceiver.EXTRA_PAGE_ID, dbId)
+                        putExtra(CompleteActionReceiver.EXTRA_OPEN_NOTION, true)
+                    },
                     PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
                 )
                 listOf(R.id.q1_label, R.id.q2_label, R.id.q3_label, R.id.q4_label).forEach {
