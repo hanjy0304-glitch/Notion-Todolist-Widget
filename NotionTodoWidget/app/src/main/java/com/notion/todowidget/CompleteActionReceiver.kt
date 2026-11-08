@@ -68,8 +68,10 @@ class CompleteActionReceiver : BroadcastReceiver() {
         fun notionIntents(id: String): List<Intent> {
             val cleanId = id.replace("-", "")
             return listOf(
+                Intent(Intent.ACTION_VIEW, Uri.parse("https://www.notion.so/$cleanId")).setPackage(NOTION_PACKAGE),
                 Intent(Intent.ACTION_VIEW, Uri.parse("https://app.notion.com/p/$cleanId")).setPackage(NOTION_PACKAGE),
                 Intent(Intent.ACTION_VIEW, Uri.parse("notion://www.notion.so/$cleanId")).setPackage(NOTION_PACKAGE),
+                Intent(Intent.ACTION_VIEW, Uri.parse("notion://app.notion.com/p/$cleanId")).setPackage(NOTION_PACKAGE),
                 Intent(Intent.ACTION_VIEW, Uri.parse("https://app.notion.com/p/$cleanId"))
             ).map { it.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK) }
         }
