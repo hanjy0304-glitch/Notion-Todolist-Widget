@@ -1,6 +1,7 @@
 package com.notion.todowidget
 
 import android.appwidget.AppWidgetManager
+import android.content.ActivityNotFoundException
 import android.content.BroadcastReceiver
 import android.content.ComponentName
 import android.content.Context
@@ -25,7 +26,15 @@ class CompleteActionReceiver : BroadcastReceiver() {
     }
 
     private fun openNotionPage(context: Context, pageId: String) {
-        context.startActivity(notionIntent(context, pageId))
+        // 노션 앱 우선 시도: https(앱링크) → notion:// → 웹 순서
+        for (intent in notionIntents(pageId)) {
+            try {
+                context.startActivity(intent)
+                return
+            } catch (e: ActivityNotFoundException) {
+                // 다음 후보로
+            }
+        }
     }
 
     private fun handleComplete(context: Context, pageId: String) {
@@ -55,21 +64,14 @@ class CompleteActionReceiver : BroadcastReceiver() {
     companion object {
         private const val NOTION_PACKAGE = "notion.id"
 
-        /** 노션 앱이 설치돼 있으면 앱으로, 아니면 웹으로 여는 인텐트 */
-        fun notionIntent(context: Context, id: String): Intent {
+        /** 노션 앱 우선, 실패 시 웹으로 여는 인텐트 후보 목록 */
+        fun notionIntents(id: String): List<Intent> {
             val cleanId = id.replace("-", "")
-            val installed = try {
-                context.packageManager.getLaunchIntentForPackage(NOTION_PACKAGE) != null
-            } catch (e: Exception) {
-                false
-            }
-            val intent = if (installed) {
-                Intent(Intent.ACTION_VIEW, Uri.parse("notion://www.notion.so/$cleanId"))
-                    .setPackage(NOTION_PACKAGE)
-            } else {
-                Intent(Intent.ACTION_VIEW, Uri.parse("https://www.notion.so/$cleanId"))
-            }
-            return intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+            return listOf(
+                Intent(Intent.ACTION_VIEW, Uri.parse("https://app.notion.com/p/$cleanId")).setPackage(NOTION_PACKAGE),
+                Intent(Intent.ACTION_VIEW, Uri.parse("notion://www.notion.so/$cleanId")).setPackage(NOTION_PACKAGE),
+                Intent(Intent.ACTION_VIEW, Uri.parse("https://app.notion.com/p/$cleanId"))
+            ).map { it.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK) }
         }
 
         const val ACTION_COMPLETE = "com.notion.todowidget.ACTION_COMPLETE"
