@@ -25,10 +25,7 @@ class CompleteActionReceiver : BroadcastReceiver() {
     }
 
     private fun openNotionPage(context: Context, pageId: String) {
-        context.startActivity(
-            Intent(Intent.ACTION_VIEW, Uri.parse("https://www.notion.so/${pageId.replace("-", "")}"))
-                .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-        )
+        context.startActivity(notionIntent(context, pageId))
     }
 
     private fun handleComplete(context: Context, pageId: String) {
@@ -56,6 +53,25 @@ class CompleteActionReceiver : BroadcastReceiver() {
     }
 
     companion object {
+        private const val NOTION_PACKAGE = "notion.id"
+
+        /** 노션 앱이 설치돼 있으면 앱으로, 아니면 웹으로 여는 인텐트 */
+        fun notionIntent(context: Context, id: String): Intent {
+            val cleanId = id.replace("-", "")
+            val installed = try {
+                context.packageManager.getLaunchIntentForPackage(NOTION_PACKAGE) != null
+            } catch (e: Exception) {
+                false
+            }
+            val intent = if (installed) {
+                Intent(Intent.ACTION_VIEW, Uri.parse("notion://www.notion.so/$cleanId"))
+                    .setPackage(NOTION_PACKAGE)
+            } else {
+                Intent(Intent.ACTION_VIEW, Uri.parse("https://www.notion.so/$cleanId"))
+            }
+            return intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+        }
+
         const val ACTION_COMPLETE = "com.notion.todowidget.ACTION_COMPLETE"
         const val ACTION_REFRESH = "com.notion.todowidget.ACTION_REFRESH"
         const val EXTRA_PAGE_ID = "page_id"
