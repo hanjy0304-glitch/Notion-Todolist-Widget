@@ -85,7 +85,7 @@ class TodoWidgetProvider : AppWidgetProvider() {
             if (dbId.isNotEmpty()) {
                 val notionPi = PendingIntent.getActivity(
                     context, 998,
-                    Intent(Intent.ACTION_VIEW, Uri.parse("https://www.notion.so/$dbId")).apply { addFlags(Intent.FLAG_ACTIVITY_NEW_TASK) },
+                    CompleteActionReceiver.notionIntent(context, dbId),
                     PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
                 )
                 listOf(R.id.q1_label, R.id.q2_label, R.id.q3_label, R.id.q4_label).forEach {
